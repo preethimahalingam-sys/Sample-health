@@ -3,11 +3,13 @@ import { loadToday, getWeek } from './store';
 import TodayView from './TodayView';
 import SummaryView from './SummaryView';
 import HistoryView from './HistoryView';
+import GoalsView from './GoalsView';
 
 const NAV = [
   { id: 'today', icon: '☀️', label: 'Today' },
   { id: 'summary', icon: '📊', label: 'Summary' },
   { id: 'history', icon: '📅', label: 'History' },
+  { id: 'goals', icon: '🎯', label: 'Goals' },
 ];
 
 export default function App() {
@@ -55,6 +57,7 @@ export default function App() {
         {tab === 'today' && <TodayView entry={entry} setEntry={setEntry} />}
         {tab === 'summary' && <SummaryView entry={entry} />}
         {tab === 'history' && <HistoryView week={week} />}
+        {tab === 'goals' && <GoalsView />}
       </div>
     </div>
   );
